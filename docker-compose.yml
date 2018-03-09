@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  load-test:
+    image: yongjhih/locust:latest
+    container_name: locust
+    ports:
+      - "8089:8089"
+      - "5557:5557"
+      - "5558:5558"
+    volumes:
+      - ./:/app/locust
+    entrypoint: |
+      /bin/sh -c " \
+        cd /app/locust && \
+        pip install -r requirements.txt && \
+        locust
+      "
