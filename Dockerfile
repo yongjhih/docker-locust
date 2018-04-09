@@ -1,6 +1,6 @@
 FROM python:alpine3.6
 
-RUN apk -U add ca-certificates build-base git && \
+RUN apk -U add ca-certificates build-base git openssh && \
     pip install locustio && \
     rm -r /var/cache/apk/* && \
     mkdir /app
