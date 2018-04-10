@@ -7,7 +7,7 @@ RUN apk -U add ca-certificates build-base git openssh && \
 
 WORKDIR /app
 
-ADD docker-entrypoint.sh /app
+ADD docker-entrypoint.sh /docker-entrypoint.sh
 
 EXPOSE 8089 5557 5558
-ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
